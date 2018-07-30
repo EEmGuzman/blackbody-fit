@@ -63,7 +63,7 @@ with open(str(sys.argv[1]), 'r') as infile:
         Imag.append(float(row[5]))
         Ierr.append(float(row[6]))
 
-# Correcting for dust extinction.
+# Correcting for extinction.
 relextinc = [4.325, 3.240, 1.962]
 cBmag = np.array(Bmag) - relextinc[0]*(float(sys.argv[4]))
 cBerr = np.array(Berr) - relextinc[0]*(float(sys.argv[4]))
@@ -84,7 +84,6 @@ ewl = [4380, 5450, 7980]
 
 # Finding triplets of B,V,I
 nepochs = len(Bflux)
-print(nepochs)
 fluxvals = np.zeros((nepochs,3))
 fluxerrs = np.zeros((nepochs,3))
 for counter in range(nepochs):
@@ -103,5 +102,6 @@ for value in range(nepochs):
 rdata = zip(mjd, temps, temperrs)
 with open(str(sys.argv[5]), 'w') as outfile:
     odata = csv.writer(outfile)
+    odata.writerow(["mjd", "temperature", "temperror"])
     for row in rdata:
         odata.writerow(row)

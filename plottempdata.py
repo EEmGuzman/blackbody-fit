@@ -14,6 +14,7 @@ def gettempdata(filename):
     temp = []
     temperr = []
     with open(str(filename), 'r') as infile:
+        next(infile)
         datain = csv.reader(infile)
         for row in datain:
             mjd.append(float(row[0]))
