@@ -6,8 +6,9 @@ multiblbf.py information
 ----------------------------
 This program performs a black body fit to each epoch provided in a csv file and outputs the best fit temperature and associated errors.
 
-Usage:  
-./multiblbf inputcsvfilename scaleguess tempguess reddening outfilename
+Usage:
+
+	./multiblbf inputcsvfilename scaleguess tempguess reddening outfilename
 
 Inputs:  
 -inputcsvfilename  
@@ -38,7 +39,8 @@ plottempdata.py information
 This program takes two sets of temperature data and provides a plot with errorbars. Use output csv files from multiblbf.py. Currently this program is written around KAIT and Konkoly data. Names in legend can be changed manually to accommodate other pairs of data sets.  
 
 Usage:  
-./plottempdata.py kaittempdata konktempdata outfilename
+
+	./plottempdata.py kaittempdata konktempdata outfilename
 
 Example:  
 
